@@ -9,7 +9,7 @@ from pyspark.ml.regression import RandomForestRegressor
 
 from model import model_utils
 
-app = Flask(__name__)  # Create a Flask WSGI application
+app = Flask(__name__)
 
 
 def train_model(training_size, mode):
@@ -35,7 +35,6 @@ def transform_stages():
 
 
 def model_fitter():
-    # Train a DecisionTree model.
     return RandomForestRegressor(labelCol="best_hero", featuresCol="features")
 
 
