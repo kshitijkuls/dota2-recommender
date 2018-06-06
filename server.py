@@ -4,7 +4,6 @@ from model import model_fitter
 from flask import Flask, request
 from flask import render_template
 from flask.json import jsonify
-
 from model import predictor
 
 app = Flask(__name__)
@@ -15,10 +14,10 @@ app = Flask(__name__)
 def leaderboard():
     player_ids = request.args.get("player_ids").split(',')
     print(player_ids)
-    time_frame = request.args.get("time_frame")
+    time_frame = request.args.get("time_window")
     board = []
     players = [opendota.resolve(player_id) for player_id in player_ids]
-    days = opendota.INTERVALS[time_frame]
+    days = model_constants.TIME_WINDOW[time_frame]
     print(players)
     for player in players:
         data = opendota.call_opendota(('players', player, 'wl'), {'date': days})
@@ -53,9 +52,7 @@ def compare():
         (player1.xp_per_min/100, player2.xp_per_min/100)
     ]
 
-    player2_values = [player2.kda, player2.last_hits, player2.actions_per_min]
     return render_template('chart.html', values=values, labels=labels)
-    # return jsonify(result)
 
 
 @app.route('/suggest', methods=['GET'])
@@ -84,9 +81,7 @@ def train_model_locally():
 
 @app.route("/")
 def chart():
-    labels = ["January", "February", "March", "April", "May", "June", "July", "August"]
-    values = [10, 9, 8, 7, 6, 4, 7, 8]
-    return render_template('chart.html', values=values, labels=labels)
+    return render_template('main.html', values=None, labels=None)
 
 
 if __name__ == '__main__':

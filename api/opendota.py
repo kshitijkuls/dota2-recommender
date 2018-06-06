@@ -7,12 +7,6 @@ Player = collections.namedtuple('Player',
                                  'lane_efficiency_pct', 'hero_damage', 'tower_damage', 'hero_healing',
                                  'stuns', 'tower_kills', 'neutral_kills', 'courier_kills', 'actions_per_min'])
 
-INTERVALS = {
-    'week': 7,
-    'month': 30,
-    'year': 365
-}
-
 
 def call_opendota(path, query=None):
     url = 'https://api.opendota.com/api/' + '/'.join(map(str, path))

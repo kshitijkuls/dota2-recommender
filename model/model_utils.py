@@ -26,7 +26,7 @@ def fetch_players_data_locally(mode):
 
 
 def players_data_locally():
-    file = open("../data/local_data.txt", "r")
+    file = open("data/local_data.txt", "r")
     players_data_local = dict(map(lambda player_info: (player_info.split('#')), file.read().split('\n')))
     return players_data_local
 
