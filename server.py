@@ -31,12 +31,6 @@ def leaderboard():
 def compare():
     player1 = opendota.get_stats(request.args.get("player1"))
     player2 = opendota.get_stats(request.args.get("player2"))
-    result = {}
-    # for A_stat, B_stat in zip(player1, player2):
-    #     if A_stat[1] > B_stat[1]:
-    #         result[A_stat[0]] = A_stat[1]
-    #     else:
-    #         result[A_stat[0]] = B_stat[1]
 
     labels = ['kda', 'last_hits/10', 'actions_per_min/10', 'neutral_kills/10', 'tower_kills', 'tower_damage/100',
               'hero_damage/1000', 'gold_per_min/1000', 'xp_per_min/100']
