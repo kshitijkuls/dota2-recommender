@@ -51,7 +51,7 @@ def heroes():
     return HEROES
 
 
-def get_stats(player, players_data_locally):
+def get_stats(player, players_data_locally=None):
     player = resolve(player)
     print("Getting status of player: " + str(player))
     data = fetch_stats(players_data_locally, player)
