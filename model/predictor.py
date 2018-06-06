@@ -1,8 +1,9 @@
 import pyspark
+from constants import model_constants
+from model import model_utils
 from pyspark.ml.pipeline import PipelineModel
-from dota2.api import opendota
-from dota2.model import model_utils
-from dota2.constants import model_constants
+
+from api import opendota
 
 
 def predict(player):

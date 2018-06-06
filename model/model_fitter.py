@@ -1,12 +1,13 @@
 import pyspark
+from constants import model_constants
 from flask import Flask
-from pyspark.ml.regression import RandomForestRegressor
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml.feature import StandardScaler
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.pipeline import Pipeline
-from dota2.model import model_utils
-from dota2.constants import model_constants
+from pyspark.ml.regression import RandomForestRegressor
+
+from model import model_utils
 
 app = Flask(__name__)  # Create a Flask WSGI application
 

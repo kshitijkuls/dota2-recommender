@@ -1,6 +1,7 @@
+from constants import model_constants
 from joblib import Parallel, delayed
-from dota2.api import opendota
-from dota2.constants import model_constants
+
+from api import opendota
 
 
 def get_player_df(spark, training_size, mode):

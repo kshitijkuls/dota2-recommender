@@ -1,12 +1,13 @@
+from api import opendota
+from constants import model_constants
+from model import model_fitter
 from flask import Flask, request
-from flask.json import jsonify
-from dota2.api import opendota
-from dota2.model import predictor
-from dota2.model import model_fitter
-from dota2.constants import model_constants
 from flask import render_template
+from flask.json import jsonify
 
-app = Flask(__name__)  # Create a Flask WSGI application
+from model import predictor
+
+app = Flask(__name__)
 
 
 # @api.route('/leaderboard')
