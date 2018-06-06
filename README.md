@@ -32,6 +32,7 @@
 
       e.g /compare?player1=87776861&player2=112127585
 
+![alt text](https://github.com/horizon23/dota2-recommonder/blob/master/comparison.png)
 
 ###3. Recommendation Engine (Recommend hero)
 
