@@ -28,9 +28,15 @@ def get_board_data(player_ids, time_frame):
         data = fetch_player_data(days, player)
         win = data['win']
         lose = data['lose']
-        board.append({'player_id': player, 'win_rate': win / (win + lose)})
+        board.append({'player_id': player, 'win_rate': safe_div(win,(win + lose))})
     print(board)
     return board
+
+
+def safe_div(x,y):
+    if y == 0:
+        return 0
+    return x / y
 
 
 def fetch_player_data(days, player):
