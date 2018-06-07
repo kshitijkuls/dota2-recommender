@@ -172,13 +172,13 @@
   <div id="readme" class="readme blob instapaper_body">
     <article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-dota2-api" class="anchor" aria-hidden="true" href="#dota2-api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dota2 API</h1>
 <p>###1. Leaderboard</p>
-<p>1.1 <code>GET /leaderboard?players={account_ids}&amp;time_window={time_window}</code></p>
-<p>1.2 <code>GET /leaderboard?players={usernames}&amp;time_window={time_window}</code></p>
-<pre><code>   e.g`/leaderboard?players=76482434,zAHARASAURUS&amp;time_window=month`
+<p>1.1 <code>GET /leaderboard?player_ids={account_ids}&amp;time_window={time_window}</code></p>
+<p>1.2 <code>GET /leaderboard?player_ids={usernames}&amp;time_window={time_window}</code></p>
+<pre><code>   e.g`/leaderboard?player_ids=76482434,zAHARASAURUS&amp;time_window=month`
 </code></pre>
 <ul>
 <li>
-<p>players - a comma separated list of <code>account_id</code> / <code>username</code></p>
+<p>player_ids - a comma separated list of <code>account_id</code> / <code>username</code></p>
 </li>
 <li>
 <p>time_window - accepted values =&gt; <code>week</code> / <code>month</code> / <code>year</code></p>
