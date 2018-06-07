@@ -12,9 +12,14 @@ app = Flask(__name__)
 # @api.route('/leaderboard')
 @app.route('/leaderboard', methods=['GET'])
 def leaderboard():
-    player_ids = request.args.get("player_ids").split(',')
+    player_ids = request.args.get("players").split(',')
     print(player_ids)
     time_frame = request.args.get("time_window", default='all')
+    board = get_board_data(player_ids, time_frame)
+    return jsonify(sorted(board, key=lambda x: -x['win_rate']))
+
+
+def get_board_data(player_ids, time_frame):
     board = []
     players = [opendota.resolve(player_id) for player_id in player_ids]
     days = model_constants.TIME_WINDOW[time_frame]
@@ -23,9 +28,9 @@ def leaderboard():
         data = fetch_player_data(days, player)
         win = data['win']
         lose = data['lose']
-        board.append({'account_id': player, 'win_rate': win / (win+lose)})
+        board.append({'player_id': player, 'win_rate': win / (win + lose)})
     print(board)
-    return jsonify(sorted(board, key=lambda x: -x['win_rate']))
+    return board
 
 
 def fetch_player_data(days, player):

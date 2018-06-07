@@ -2,13 +2,13 @@
 
 ###1. Leaderboard
 
-1.1 `GET /leaderboard?player_ids={account_ids}&time_window={time_window}`
+1.1 `GET /leaderboard?players={account_ids}&time_window={time_window}`
 
-1.2 `GET /leaderboard?player_ids={usernames}&time_window={time_window}`
+1.2 `GET /leaderboard?players={usernames}&time_window={time_window}`
 
-       e.g`/leaderboard?player_ids=76482434,zAHARASAURUS&time_window=month`
+       e.g`/leaderboard?players=76482434,zAHARASAURUS&time_window=month`
 
-* player_ids - a comma separated list of `account_id` / `username`
+* players - a comma separated list of `account_id` / `username`
 * time_window - accepted values => `week` / `month` / `year`
 
     ```javascript
