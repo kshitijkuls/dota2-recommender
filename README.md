@@ -33,7 +33,7 @@
       e.g /compare?player1=87776861&player2=112127585
 
 `Sample response`
-<img src="https://github.com/horizon23/dota2-recommonder/blob/master/comparison.png" height="540" width="780">
+<img src="https://github.com/horizon23/dota2-recommender/blob/master/comparison.png" height="540" width="780">
 
 ###3. Recommendation Engine (Recommend hero)
 
