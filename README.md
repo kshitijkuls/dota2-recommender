@@ -6,7 +6,7 @@
 
 1.2 `GET /leaderboard?players={usernames}&time_window={time_window}`
 
-       e.g`/leaderboard?players=76482434,zAHARASAURUS&time_window=month`
+       e.g`/leaderboard?players=76482434,110228930&time_window=month`
 
 * players - a comma separated list of `account_id` / `username`
 * time_window - accepted values => `week` / `month` / `year`
