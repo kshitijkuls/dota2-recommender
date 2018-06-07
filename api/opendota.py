@@ -10,12 +10,11 @@ Player = collections.namedtuple('Player',
 
 def call_opendota(path, query=None):
     url = 'https://api.opendota.com/api/' + '/'.join(map(str, path))
-    print(url)
     if query is not None:
         url += '?' + '&'.join([k + '=' + str(v) for k, v in query.items()])
     res = requests.get(url)
     data = json.loads(res.content.decode('utf-8'))
-
+    print(url)
     return data
 
 
