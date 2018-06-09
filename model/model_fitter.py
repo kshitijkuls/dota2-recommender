@@ -1,15 +1,11 @@
 import pyspark
-from constants import model_constants
-from flask import Flask
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml.feature import StandardScaler
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.pipeline import Pipeline
 from pyspark.ml.regression import RandomForestRegressor
-
+from constants import model_constants
 from model import model_utils
-
-app = Flask(__name__)
 
 
 def train_model(training_size, mode):
