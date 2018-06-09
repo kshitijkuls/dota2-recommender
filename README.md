@@ -71,6 +71,6 @@ Sample Response
 
 1. `pip3 install -r requirements.txt`
 
-2. `python3 server.py`
+2. `heroku local web`
 
 Server link: [https://dota2-recommender.herokuapp.com/](https://dota2-recommender.herokuapp.com/)
