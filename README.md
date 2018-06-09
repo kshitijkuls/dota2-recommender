@@ -73,4 +73,4 @@ Sample Response
 
 2. `python3 server.py`
 
-Server link: `http://localhost:5000/`
+Server link: [https://dota2-recommender.herokuapp.com/](https://dota2-recommender.herokuapp.com/)
