@@ -1,6 +1,6 @@
 # dota2 API
 
-###1. Leaderboard
+### 1. Leaderboard
 
 1.1 `GET /leaderboard?players={account_ids}&time_window={time_window}`
 
@@ -24,7 +24,7 @@
     "wins": 25
   }]```
 
-###2. Players Comparison
+### 2. Players Comparison
 
 `GET /compare?player1={account_id}&player2={account_id}`
 * player1 - `account_id` / `player_name`
@@ -35,19 +35,19 @@
 `Sample response`
 <img src="https://github.com/horizon23/dota2-recommender/blob/master/comparison.png" height="540" width="780">
 
-###3. Recommendation Engine (Recommend hero)
+### 3. Recommendation Engine (Recommend hero)
 
 `GET /suggest?player={account_id}`
 * player - `account_id` / `player_name`
 
       e.g /suggest?player=108383863
 
-####3.1 Train model (remote-data)
+#### 3.1. Train model (remote-data)
 `GET /train?training_size={training_size}`
 
-######Note: Training size is optional, `default = 2000`
+###### Note: Training size is optional, `default = 2000`
 
-####3.2 Train model (local-data)
+#### 3.2. Train model (local-data)
 `GET /train_locally?training_size={training_size}`
 
 ######Note: Training size is optional, `default = 2000`
@@ -55,7 +55,7 @@
 Because of the limitation of rest-api server `60 calls per minute`, I have downloaded all pro players data and hence on this api call request, it will train model on local data.
 If you have premium membership then just put you access-token and use remote data training.
 
-####3.3 Suggest hero to a player
+#### 3.3. Suggest hero to a player
 `GET /suggest?player={account_id}`
 
 Recommendation model is prepared using pyspark *(Apace Spark)*, *RandomForestRegressor* is applied by selecting players statistics as `features` and there most winning hero as `label`.
@@ -67,7 +67,7 @@ Sample Response
   "suggested_hero": "Brewmaster"
 }
 ```
-##Setup
+## Setup
 
 1. `pip3 install -r requirements.txt`
 
