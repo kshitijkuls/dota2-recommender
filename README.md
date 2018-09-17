@@ -50,7 +50,7 @@
 #### 3.2. Train model (local-data)
 `GET /train_locally?training_size={training_size}`
 
-######Note: Training size is optional, `default = 2000`
+###### Note: Training size is optional, `default = 2000`
 
 Because of the limitation of rest-api server `60 calls per minute`, I have downloaded all pro players data and hence on this api call request, it will train model on local data.
 If you have premium membership then just put you access-token and use remote data training.
