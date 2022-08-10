@@ -14,7 +14,7 @@ jsonschema==2.6.0
 MarkupSafe==1.0
 numpy==1.14.3
 py4j==0.10.6
-pyspark==2.3.0
+pyspark==3.1.3
 python-mimeparse==1.6.0
 pytz==2018.4
 requests==2.18.4
